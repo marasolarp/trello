@@ -1,0 +1,30 @@
+body{
+	margin: 0;
+	padding:0;
+	background-color:#1d8dc2;
+}
+header{
+	background-color: #147aa7;
+	width: 100%;
+	text-align: center;
+}
+.icon-trello{
+	margin-left: 3px;
+	margin: 0px;
+	color: #7dbfde;
+	padding: 10px 10px;	
+	font-size: 3em;	
+}
+h3{
+	margin: 0;
+	font-size: 30px;
+	color: #fff;
+	padding: 10px 10px;
+}
+#btn_principal{
+	background-color: #147aa7;
+	padding:10px 100px;
+	margin-left: 10px;
+	color: #fff;
+
+}

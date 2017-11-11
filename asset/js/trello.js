@@ -23,29 +23,58 @@
 	var tarea=document.getElementsByClassName('input-titulo')[0].value;
 	document.getElementsByClassName('input-titulo')[0].value = '';
 	btnPrincipal.style.display='inline-block';
-	//crear un nuevo div y añadir un contenido
+	
+	//crear un nuevo div y añadir un contenido del usuario
 	var newDiv=document.createElement('div');
-	var nuevoParrafo = document.createElement('p'); //creando parrafo
+	var nuevoParrafo = document.createElement('h4'); //creando parrafo
     var nodoText = document.createTextNode(tarea);// le estamos diciendo al comentario que es un nodo de texto.
     //agredando a los padres
     nuevoParrafo.appendChild(nodoText);
 	newDiv.appendChild(nuevoParrafo);
 	tareas.appendChild(newDiv);
+	
+	//crear boton añadir
+	/*var BotonAñadir=document.createElement('button');
+	var añadirTexto=document.createTextNode('Añadir');
+	BotonAñadir.setAttribute('type','button');
+	BotonAñadir.classList.add('id', 'btn_añadir');
+	//agregar padres
+	BotonAñadir.appendChild(añadirTexto);
+	tareas.appendChild(BotonAñadir);*/
+	
+
+	//creando a para el titulo de la lista
+	var add=document.createElement('a');
+	add.setAttribute('href','#');//crear un atributo de add
+	var textoAdd=document.createTextNode('añadir tarjeta');
+	add.appendChild(textoAdd);	
+	tareas.appendChild(add);
+	add.style.display='inline';
+
+	//creando textarea
+	add.addEventListener('click', function(){
+	var textarea=document.createElement('textarea');
+	var add=document.createElement('a');
+	add.setAttribute('href','#');//crear un atributo de add
+	var textAdd=document.createTextNode('Añadir tarjeta');
+	add.appendChild(textAdd);
+	tareas.appendChild(textarea);
+	tareas.appendChild(add); 
+	console.log(tarea);
+
 	//crear boton añadir
 	var BotonAñadir=document.createElement('button');
 	var añadirTexto=document.createTextNode('Añadir');
 	BotonAñadir.setAttribute('type','button');
-	BotonAñadir.classList.add('class', 'btn_añadir');
+	BotonAñadir.classList.add('id', 'btn_añadir');
 	//agregar padres
-	BotonAñadir.appendChild('añadir texto');
-	
-
-
-
-
-
-	console.log(tarea);
+	BotonAñadir.appendChild(añadirTexto);
+	tareas.appendChild(BotonAñadir);
 	});
+});
+
+
 };
+
 
 	

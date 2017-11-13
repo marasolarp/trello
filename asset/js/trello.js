@@ -6,7 +6,7 @@
 	//crear input y darle atributos 
 	var input=document.createElement('input');
 	input.setAttribute('type', 'text');// sera tipo texto
-	input.setAttribute('placeholder', 'Título');//escribo el placeholder
+	input.setAttribute('placeholder', 'Añadir Tarjeta...');//escribo el placeholder
 	input.classList.add('class', 'input-titulo');//agrego clase a mi input para luego darle estilos en css
 	input.value;//rescato el valor agregado por el usuario
 	//creare mi boton
@@ -42,11 +42,10 @@
 	BotonAñadir.appendChild(añadirTexto);
 	tareas.appendChild(BotonAñadir);*/
 	
-
 	//creando a para el titulo de la lista
 	var add=document.createElement('a');
 	add.setAttribute('href','#');//crear un atributo de add
-	var textoAdd=document.createTextNode('añadir tarjeta');
+	var textoAdd=document.createTextNode('Añadir Tarjeta');
 	add.appendChild(textoAdd);	
 	tareas.appendChild(add);
 	add.style.display='inline';
@@ -56,6 +55,7 @@
 	var textarea=document.createElement('textarea');
 	var add=document.createElement('a');
 	add.setAttribute('href','#');//crear un atributo de add
+	textarea.setAttribute('class', 'tarjeta');
 	var textAdd=document.createTextNode('Añadir tarjeta');
 	add.appendChild(textAdd);
 	tareas.appendChild(textarea);
@@ -70,11 +70,24 @@
 	//agregar padres
 	BotonAñadir.appendChild(añadirTexto);
 	tareas.appendChild(BotonAñadir);
+	BotonAñadir.addEventListener('click', function(){
+		var segundaTarjeta=document.getElementsByClassName('btn_guardar');
+		//rescatando el valor de textarea
+		var textareaValue=document.getElementsByClassName('tarjeta')[0].value;
+		document.getElementsByClassName('tarjeta')[0].value='';
+		var textSpan=document.createTextNode(textareaValue);
+
+		//creando div para almacenar independiente al span
+		var contenedorSolo=document.createElement('div');
+		contenedorSolo.setAttribute('class', 'solo');
+		var textoSolo=document.createElement('p');
+		textoSolo.appendChild(textSpan);
+		contenedorSolo.appendChild(textoSolo);
+		segundaTarjeta.appendChild(contenedorSolo);
+
+	})
 	});
 });
 
 
 };
-
-
-	
